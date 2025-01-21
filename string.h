@@ -18,6 +18,8 @@ typedef struct string_s {
     char (*at)(const struct string_s *this, size_t pos);
     void (*clear)(struct string_s *this);
     int (*length)(const struct string_s *this);
+    int (*compare_s)(const struct string_s *this, const struct string_s *str);
+    int (*compare_c)(const struct string_s *this, const char *str);
 } string_t;
 
 void string_init(string_t *this, const char *s);
@@ -30,4 +32,6 @@ void append_c(string_t *this, const char *ap);
 char att(const string_t *this, size_t pos);
 void clear(string_t *this);
 int length(const string_t *this);
+int compare_s(const string_t *this, const string_t *str);
+int compare_c(const string_t *this, const char *str);
 #endif //STRING_H
