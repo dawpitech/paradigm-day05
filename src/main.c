@@ -22,6 +22,8 @@ int main(void)
     printf("COPY: %s\n", test_str);
     printf("%s\n", s.str);
     printf("%c\n", s.at(&s, 2));
+    printf("PRINT BUFF: %s\n", s.c_str(&s));
+    printf("IS EMPTY: %d\n", s.empty(&s));
     printf("Length: %d\n", s.length(&s));
     s.clear(&s);
     printf("Content: %s\nSize: %d\n", s.str, s.length(&s));

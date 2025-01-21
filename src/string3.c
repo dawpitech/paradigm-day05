@@ -40,3 +40,10 @@ const char *c_str(const string_t *this)
         return NULL;
     return this->str;
 }
+
+int empty(const string_t *this)
+{
+    if (this == NULL || this->str == NULL)
+        return 0;
+    return this->length(this) == 0 ? 1 : 0;
+}
