@@ -24,6 +24,9 @@ typedef struct string_s {
         size_t pos);
     const char *(*c_str)(const struct string_s *this);
     int (*empty)(const struct string_s *this);
+    int (*find_s)(const struct string_s *this, const struct string_s *str,
+        size_t pos);
+    int (*find_c)(const struct string_s *this, const char *str, size_t pos);
 } string_t;
 
 void string_init(string_t *this, const char *s);
@@ -41,4 +44,6 @@ int compare_c(const string_t *this, const char *str);
 size_t copy(const string_t *this, char *s, size_t n, size_t pos);
 const char *c_str(const string_t *this);
 int empty(const string_t *this);
+int find_s(const string_t *this, const string_t *str, size_t pos);
+int find_c(const string_t *this, const char *str, size_t pos);
 #endif //STRING_H

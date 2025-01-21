@@ -25,6 +25,8 @@ void string_init(string_t *this, const char *s)
     this->copy = copy;
     this->c_str = c_str;
     this->empty = empty;
+    this->find_s = find_s;
+    this->find_c = find_c;
 }
 
 void string_destroy(string_t *this)
@@ -51,4 +53,20 @@ void assign_c(struct string_s *this, const char *s)
     this->str = strdup(s);
     if (old_str != NULL)
         free(old_str);
+}
+
+int find_s(const string_t *this, const string_t *str, size_t pos)
+{
+    char *ptr_found;
+
+    if (this == NULL || str == NULL)
+        return 0;
+    if (this->str == NULL || str->str == NULL)
+        return 0;
+    if (pos > this->length(this) - 1)
+        return -1;
+    ptr_found = strstr(&this->str[pos], str->str);
+    if (ptr_found == NULL)
+        return -1;
+    return abs(ptr_found - &this->str[pos]);
 }

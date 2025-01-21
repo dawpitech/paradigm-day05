@@ -23,6 +23,7 @@ T_BDIR	=	.build/test
 SRC = src/string.c
 SRC	+=	src/string2.c
 SRC	+=	src/string3.c
+SRC	+=	src/string4.c
 T_SRC	=	src/main.c
 
 OBJ = $(SRC:%.c=$(BDIR)/%.o)
