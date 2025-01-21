@@ -12,6 +12,7 @@
 int main(void)
 {
     string_t s;
+
     string_init(&s, " ");
     s.assign_c(&s, "Hello World");
     printf("%s\n", s.str);

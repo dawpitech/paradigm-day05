@@ -47,9 +47,11 @@ test: $(NAME) $(T_OBJ)
 
 clean:
 	@ rm -f $(OBJ)
+	@ rm -f $(T_OBJ)
 
 fclean: clean
 	@ rm -f $(NAME)
+	@ rm -f $(T_NAME)
 
 re: fclean all
 

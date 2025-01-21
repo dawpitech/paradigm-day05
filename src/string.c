@@ -28,6 +28,7 @@ void string_destroy(string_t *this)
 void assign_s(struct string_s *this, const struct string_s *str)
 {
     char *old_str = this->str;
+
     this->str = strdup(str->str);
     if (old_str != NULL)
         free(old_str);
@@ -36,6 +37,7 @@ void assign_s(struct string_s *this, const struct string_s *str)
 void assign_c(struct string_s *this, const char *s)
 {
     char *old_str = this->str;
+
     this->str = strdup(s);
     if (old_str != NULL)
         free(old_str);
