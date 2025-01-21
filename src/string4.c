@@ -65,3 +65,10 @@ void insert_c(string_t *this, size_t pos, const char *str)
     this->assign_c(this, new_str);
     free(new_str);
 }
+
+int to_int(const string_t *this)
+{
+    if (this == NULL || this->str == NULL)
+        return -1;
+    return atoi(this->str);
+}
