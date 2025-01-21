@@ -31,6 +31,9 @@ int main(void)
     printf("Length: %d\n", s.length(&s));
     s.clear(&s);
     printf("Content: %s\nSize: %d\n", s.str, s.length(&s));
+    s.assign_c(&s, "- :: -");
+    s.insert_c(&s, 3, "Hi there");
+    printf("INSERT_C: %s\n", s.str);
     string_destroy(&s);
     return (0);
 }
