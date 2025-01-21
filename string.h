@@ -18,6 +18,6 @@ typedef struct string_s {
 void string_init(string_t *this, const char *s);
 void string_destroy(string_t *this);
 
-void assign_s(struct string_s *this, const struct string_s *str);
-void assign_c(struct string_s *this, const char *s);
+void assign_s(string_t *this, const string_t *str);
+void assign_c(string_t *this, const char *s);
 #endif //STRING_H
