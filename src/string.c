@@ -63,10 +63,12 @@ int find_s(const string_t *this, const string_t *str, size_t pos)
         return 0;
     if (this->str == NULL || str->str == NULL)
         return 0;
-    if (pos > this->length(this) - 1)
+    if ((int) pos > this->length(this) - 1)
         return -1;
     ptr_found = strstr(&this->str[pos], str->str);
     if (ptr_found == NULL)
         return -1;
-    return abs(ptr_found - &this->str[pos]);
+    return ptr_found - &this->str[pos] < 0
+        ? &this->str[pos] - ptr_found
+        : ptr_found - &this->str[pos];
 }
