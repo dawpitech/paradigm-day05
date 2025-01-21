@@ -33,3 +33,10 @@ size_t copy(const string_t *this, char *s, size_t n, size_t pos)
     s = strncpy(s, &this->str[pos], n);
     return strlen(s);
 }
+
+const char *c_str(const string_t *this)
+{
+    if (this == NULL)
+        return NULL;
+    return this->str;
+}
