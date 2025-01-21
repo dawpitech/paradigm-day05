@@ -18,6 +18,7 @@ int main(void)
     s.append_c(&s, "!!");
     printf("%s\n", s.str);
     printf("%c\n", s.at(&s, 2));
+    printf("Length: %d\n", s.length(&s));
     s.clear(&s);
     printf("Content: %s\nSize: %d\n", s.str, strlen(s.str));
     string_destroy(&s);

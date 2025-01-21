@@ -19,6 +19,7 @@ void string_init(string_t *this, const char *s)
     this->append_c = append_c;
     this->at = att;
     this->clear = clear;
+    this->length = length;
 }
 
 void string_destroy(string_t *this)

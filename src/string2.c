@@ -58,3 +58,10 @@ void clear(string_t *this)
     this->str = realloc(this->str, sizeof(char));
     this->str[0] = '\0';
 }
+
+int length(const string_t *this)
+{
+    if (this == NULL || this->str == NULL)
+        return -1;
+    return strlen(this->str);
+}
