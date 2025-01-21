@@ -15,6 +15,7 @@ int main(void)
 
     string_init(&s, " ");
     s.assign_c(&s, "Hello World");
+    s.append_c(&s, "!!");
     printf("%s\n", s.str);
     string_destroy(&s);
     return (0);
