@@ -25,3 +25,11 @@ int compare_c(const string_t *this, const char *str)
         return -1;
     return strcmp(this->str, str);
 }
+
+size_t copy(const string_t *this, char *s, size_t n, size_t pos)
+{
+    if (this == NULL || this->str == NULL || s == NULL)
+        return 0;
+    s = strncpy(s, &this->str[pos], n);
+    return strlen(s);
+}

@@ -44,7 +44,7 @@ $(T_BDIR)/%.o: %.c
 $(NAME): $(OBJ)
 	@ ar rc ${NAME} $(OBJ)
 
-test: $(NAME) $(T_OBJ)
+test: re $(T_OBJ)
 	@ $(CC) $(T_OBJ) -L. -lstring -o $(T_NAME)
 
 clean:
