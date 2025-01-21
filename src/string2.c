@@ -43,3 +43,18 @@ void append_c(string_t *this, const char *ap)
     if (old_str != NULL)
         free(old_str);
 }
+
+char att(const string_t *this, size_t pos)
+{
+    if (this == NULL || this->str == NULL || pos > strlen(this->str) - 1)
+        return -1;
+    return this->str[pos];
+}
+
+void clear(string_t *this)
+{
+    if (this == NULL || this->str == NULL)
+        return;
+    this->str = realloc(this->str, sizeof(char));
+    this->str[0] = '\0';
+}
