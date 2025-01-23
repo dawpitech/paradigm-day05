@@ -34,8 +34,8 @@ size_t copy(const string_t *this, char *s, size_t n, size_t pos)
         return 0;
     for (idx = 0; idx < n; idx++) {
         s[idx] = this->str[pos + idx];
-        if (this->str[pos+ idx] == '\0')
-            break;
+        if (this->str[pos + idx] == '\0')
+            return idx + 1;
     }
     return idx;
 }
