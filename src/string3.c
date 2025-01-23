@@ -28,10 +28,16 @@ int compare_c(const string_t *this, const char *str)
 
 size_t copy(const string_t *this, char *s, size_t n, size_t pos)
 {
+    size_t idx;
+
     if (this == NULL || this->str == NULL || s == NULL)
         return 0;
-    s = strncpy(s, &this->str[pos], n);
-    return strlen(s);
+    for (idx = 0; idx < n; idx++) {
+        s[idx] = this->str[pos + idx];
+        if (this->str[pos+ idx] == '\0')
+            break;
+    }
+    return idx;
 }
 
 const char *c_str(const string_t *this)
